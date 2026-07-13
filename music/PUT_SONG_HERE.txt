@@ -1,0 +1,11 @@
+Add your birthday song here, named exactly:
+
+birthday-song.mp3
+
+The "Play Music 🎵" floating button in the bottom-right corner will
+play/pause this file. Music never autoplays — it only starts when the
+button is tapped, per the design requirements.
+
+If this file is missing, tapping the button will briefly show
+"Add music/birthday-song.mp3 🎵" instead of failing silently or
+throwing a console error.

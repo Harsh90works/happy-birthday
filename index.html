@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Happy Birthday, My Buggu ❤️</title>
+
+<!-- ============================================================
+     GOOGLE FONTS — Poppins (body/UI) + Dancing Script (romantic script)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     LOADING SCREEN
+     Shows first, hides once page assets/animations are ready.
+     ============================================================ -->
+<div id="loading-screen">
+  <div class="loading-heart">❤️</div>
+  <p class="loading-text">Preparing Something Special...</p>
+</div>
+
+<!-- ============================================================
+     BACKGROUND EFFECT LAYERS (persist across the whole site)
+     These are absolutely positioned, full-page, pointer-events:none
+     containers. JS populates them with floating elements.
+     ============================================================ -->
+<div id="bg-hearts" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-stars" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-particles" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-balloons" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-petals" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-sparkles" class="bg-layer" aria-hidden="true"></div>
+
+<!-- Cute GIF rain container -->
+<div id="gif-rain" class="bg-layer" aria-hidden="true"></div>
+
+<!-- Floating cute messages container -->
+<div id="floating-messages" class="bg-layer" aria-hidden="true"></div>
+
+<!-- Custom heart cursor (desktop only, toggled via JS/CSS) -->
+<div id="heart-cursor" aria-hidden="true">❤️</div>
+
+<!-- ============================================================
+     LANDING SCREEN
+     ============================================================ -->
+<section id="landing-screen">
+  <div class="landing-content">
+    <p class="landing-line">Someone very special has a surprise waiting for you...</p>
+    <p class="landing-heart">❤️</p>
+    <button id="open-surprise-btn" class="glow-btn pulse">Open My Surprise 🎁</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     MAIN SURPRISE PAGE (hidden until landing button is tapped)
+     ============================================================ -->
+<main id="main-page">
+
+  <!-- ---------- GIFT BOX SECTION ---------- -->
+  <section id="gift-section" class="section">
+    <h2 class="section-title">A Little Something For You</h2>
+    <div id="gift-box" class="gift-box">
+      <div class="gift-box-inner">
+        <div class="gift-lid">🎁</div>
+        <p class="gift-label">Tap Me 🎁</p>
+      </div>
+    </div>
+
+    <!-- Reveal content — hidden until gift is opened -->
+    <div id="gift-reveal" class="gift-reveal hidden">
+      <h3 class="reveal-title">Happy Birthday ❤️</h3>
+
+      <!-- ============================================================
+           BIRTHDAY LETTER — EDIT ME
+           Replace the placeholder text below with your own personal
+           birthday message. The typing animation will type out
+           whatever is inside #letter-text data attribute in script.js
+           (search for "PERSONAL MESSAGE" in script.js to edit).
+           ============================================================ -->
+      <div class="glass-card letter-card">
+        <p id="letter-text" class="letter-text"></p>
+        <span id="letter-cursor" class="typing-cursor">|</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- PHOTO GALLERY ---------- -->
+  <section id="gallery-section" class="section">
+    <h2 class="section-title">Our Beautiful Moments 📸</h2>
+    <!--
+      GALLERY — EDIT ME
+      Replace /images/photo1.jpg ... photo6.jpg with your own photos.
+      Keep the same filenames or update the src attributes below.
+    -->
+    <div class="gallery-grid">
+      <img class="gallery-img" data-src="images/photo1.jpg" alt="Memory 1" loading="lazy">
+      <img class="gallery-img" data-src="images/photo2.jpg" alt="Memory 2" loading="lazy">
+      <img class="gallery-img" data-src="images/photo3.jpg" alt="Memory 3" loading="lazy">
+      <img class="gallery-img" data-src="images/photo4.jpg" alt="Memory 4" loading="lazy">
+      <img class="gallery-img" data-src="images/photo5.jpg" alt="Memory 5" loading="lazy">
+      <img class="gallery-img" data-src="images/photo6.jpg" alt="Memory 6" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Lightbox for gallery -->
+  <div id="lightbox" class="lightbox hidden">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Memory">
+  </div>
+
+  <!-- ---------- MEMORY TIMELINE ---------- -->
+  <section id="timeline-section" class="section">
+    <h2 class="section-title">Our Little Memories ❤️</h2>
+    <!--
+      TIMELINE — EDIT ME
+      Update the <p> text inside each card with your real memories.
+    -->
+    <div class="timeline">
+      <div class="timeline-card glass-card">
+        <span class="timeline-icon">💬</span>
+        <h4>First Conversation</h4>
+        <p>[Buggu mainu yaad aw meri first convo tere nal hoye se coffee shop te oddo appa enne gal ni kiti se par chal thats our start and frankly speaking mainu nhi ptta se vi mai tainu enna pasand krru meri buggu nu ]</p>
+      </div>
+      <div class="timeline-card glass-card">
+        <span class="timeline-icon">😊</span>
+        <h4>First Smile</h4>
+        <p>[there are many moments with u jo ki mai soch ke khush huna par ohh moment jddo tere piche shota ja dogi pyya se tu bhaj ke chair te baith ge parr upper krke 😂😂😂 ]</p>
+      </div>
+      <div class="timeline-card glass-card">
+        <span class="timeline-icon">😂</span>
+        <h4>First Laugh</h4>
+        <p>[honestly mainu yaad ni apni first laugh but we have alot of memories that makes us laugh , we have done alot of chuglis and when we are together we did not want any third person to make us laugh, we both enjoyed alot and a have alot of fun together.  ]</p>
+      </div>
+      <div class="timeline-card glass-card">
+        <span class="timeline-icon">✨</span>
+        <h4>Our Favorite Moment</h4>
+        <p>[yaar i dont have one favorite memory i have alot of memory with you tainu kutna tu mainu kutna mazak karna 😹 glla krneya khana pena😋 , most imp part ladna and all ☺️]</p>
+      </div>
+      <div class="timeline-card glass-card">
+        <span class="timeline-icon">❤️</span>
+        <h4>Today ❤️</h4>
+        <p>Celebrating the most special person in my life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- FINAL SECTION ---------- -->
+  <section id="final-section" class="section">
+    <div class="final-heart">❤️</div>
+    <h2 class="final-title">You'll Always Be My Favorite Person ❤️</h2>
+    <p class="final-subtitle">Happy Birthday Once Again</p>
+  </section>
+
+  <!-- ---------- ONE LAST SURPRISE ---------- -->
+  <section id="last-surprise-section" class="section">
+    <button id="last-surprise-btn" class="glow-btn pulse">One Last Surprise... ❤️</button>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FINAL BLACKOUT SURPRISE OVERLAY
+     Full-screen fade-to-black moment with starfield + typewriter line
+     ============================================================ -->
+<div id="blackout-overlay" class="hidden">
+  <div id="blackout-stars"></div>
+  <div class="blackout-content">
+    <p id="blackout-typewriter" class="blackout-typewriter"></p>
+    <span id="blackout-cursor" class="typing-cursor hidden">|</span>
+    <div id="blackout-final-heart" class="blackout-final-heart hidden">❤️</div>
+    <p id="blackout-final-line" class="blackout-final-line hidden">Happy Birthday, My Love. ❤️</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     FLOATING MUSIC BUTTON
+     Replace music/birthday-song.mp3 with your own song file.
+     ============================================================ -->
+<button id="music-btn" class="music-btn">Play Music 🎵</button>
+<audio id="bg-music" loop preload="none">
+  <source src="music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Confetti canvas (covers full screen, used for confetti bursts) -->
+<canvas id="confetti-canvas"></canvas>
+
+<footer id="site-footer">
+  <p>Made with ❤️ just for you.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

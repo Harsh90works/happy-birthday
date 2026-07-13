@@ -1,0 +1,14 @@
+This site currently shows cute emoji (🐶 🐱 🧸 🐰 🐧 🦫 🐹 💗 🎂) as
+placeholders for the "cute GIF rain" effect, so it looks complete and
+polished right away without any files.
+
+To use REAL GIFs instead:
+1. Add your .gif files into this /gifs folder (e.g. puppy1.gif).
+2. Open script.js and find the GIF_LIST array near the top (search for
+   "GIF_LIST").
+3. Fill in the "src" field for each entry, e.g.:
+
+   { label: "puppy", emoji: "🐶", src: "gifs/puppy1.gif" }
+
+That's it — the emoji fallback will automatically be replaced by your
+real GIF once a valid src is provided.

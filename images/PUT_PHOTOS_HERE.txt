@@ -1,0 +1,15 @@
+Put your photos here, named exactly:
+
+photo1.jpg
+photo2.jpg
+photo3.jpg
+photo4.jpg
+photo5.jpg
+photo6.jpg
+
+The gallery section in index.html references these filenames.
+If a file is missing, that gallery slot will show a soft placeholder
+icon instead of a broken image — nothing will look broken.
+
+You can use JPG or PNG — just keep the same filenames, or update the
+`data-src` attributes in index.html to match your own filenames.
